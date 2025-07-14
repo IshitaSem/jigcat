@@ -2,25 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title> Jigsaw Puzzle</title>
+  <title>Jigsaw Puzzle</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>🧩 In‑built Jigsaw Puzzle</h1>
+  <h1>🧩 Jigsaw Puzzle</h1>
+  <p id="levelInfo">Level 1 (3 × 3)</p>
 
   <div id="puzzle-container"></div>
 
   <div class="buttons">
-    <button id="shuffle">🔀 Shuffle</button>
-    <button id="toggleMusic">🎵 Play Music</button>
+    <button id="shuffle">🔀 Shuffle</button>
+    <button id="toggleMusic">🎵 Play Music</button>
   </div>
 
-  <audio id="solvedSound" src="sounds/bg-music.mp3"></audio>
+  <!-- sounds -->
+  <audio id="solvedSound" src="sounds/win.mp3"></audio>
   <audio id="bgMusic" loop>
     <source src="sounds/bg-music.mp3" type="audio/mpeg" />
   </audio>
 
-  <video id="memeVideo" width="400" controls style="display:none;"></video>
+  <!-- popup overlay -->
+  <div id="memeOverlay">
+    <div id="popupVideoBox">
+      <!-- `preload="auto"` helps browsers be ready; muted is set by JS only if needed -->
+      <video id="memeVideo" preload="auto" controls></video>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
